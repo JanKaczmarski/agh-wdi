@@ -1,7 +1,7 @@
 # zadanie 3
 from random import randint
-def create_sample_data():
-    return [[randint(1,100) for _ in range(8)] for _ in range(8)]
+def create_sample_data(n):
+    return [[randint(1,100) for _ in range(n)] for _ in range(n)]
 
 
 def chess(T, k):
@@ -12,7 +12,8 @@ def chess(T, k):
            p: pole"""
         if w == N - 1:
             return suma
-
+        # BŁĄD nie rozpatruje wszystkich przypadkow
+        # rozlaczne returny i min()
         if p + 1 < N and p - 1 > -1:
             return min(rek(T, w+1, p+1, suma + T[w+1][p+1]),
                        rek(T, w+1, p-1, suma + T[w+1][p-1]),
@@ -27,7 +28,7 @@ def chess(T, k):
     return rek(T, 0, k, 0)
 
 
-sample_data = create_sample_data()
+sample_data = create_sample_data(8)
 
 for line in sample_data:
     print(line)

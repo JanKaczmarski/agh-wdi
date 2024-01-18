@@ -21,4 +21,4 @@ def czy_pierwsza(n):
 
     return True
 
-print(czy_pierwsza(37))
+print(czy_pierwsza(29))

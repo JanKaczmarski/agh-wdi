@@ -13,7 +13,7 @@ def czy_pierwsza(n):
         return False
 
     i = 6
-    while i <= sqrt(n):
+    while i <= sqrt(n) + 1:
         if n % (i - 1) == 0 or n % (i + 1) == 0:
             return False
 
